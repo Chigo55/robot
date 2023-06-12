@@ -214,7 +214,6 @@ void joystickToSpeed()
       speed = 90;
     }
   }
-
   else
   {
     speed = 0;
@@ -253,6 +252,64 @@ void sonarToRobot()
   {
     speedToTargetR(speed);
     speedToTargetL(speed);
+  }
+}
+
+// 모터 방향 제어 함수
+void motorDirectionControl(int direction)
+{
+  // 전진
+  if (direction == 0)
+  {
+    digitalWrite(motorRightDir, LOW);
+    digitalWrite(motorLeftDir, LOW);
+    speedToTargetR(speed);
+    speedToTargetL(speed);
+  }
+  // 후진
+  else if (direction == 1)
+  {
+    digitalWrite(motorRightDir, HIGH);
+    digitalWrite(motorLeftDir, HIGH);
+    speedToTargetR(speed);
+    speedToTargetL(speed);
+  }
+  // 우회전
+  else if (direction == 2)
+  {
+    digitalWrite(motorRightDir, HIGH);
+    digitalWrite(motorLeftDir, LOW);
+    speedToTargetR(speed);
+    speedToTargetL(speed);
+  }
+  // 좌회전
+  else if (direction == 3)
+  {
+    digitalWrite(motorRightDir, LOW);
+    digitalWrite(motorLeftDir, HIGH);
+    speedToTargetR(speed);
+    speedToTargetL(speed);
+  }
+}
+
+// 로봇 루트 설정 함수
+void setRobotRoute(int route)
+{
+  // 루트 1번
+  if (route == 1)
+  {
+  }
+  // 루트 2번
+  else if (route == 1)
+  {
+  }
+  // 루트 3번
+  else if (route == 1)
+  {
+  }
+  // 루트 4번
+  else if (route == 1)
+  {
   }
 }
 
