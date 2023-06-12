@@ -290,6 +290,14 @@ void motorDirectionControl(int direction)
     speedToTargetR(speed);
     speedToTargetL(speed);
   }
+  // 정지
+  else
+  {
+    digitalWrite(motorRightDir, LOW);
+    digitalWrite(motorLeftDir, LOW);
+    speedToTargetR(0);
+    speedToTargetL(0);
+  }
 }
 
 // 로봇 루트 설정 함수
